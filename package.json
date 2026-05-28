@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.23.1",
+    "bootstrap-vue-next": "^0.45.3",
+    "vue-router": "^5.0.7"
+  }
+}
