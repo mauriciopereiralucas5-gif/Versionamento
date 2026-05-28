@@ -6,7 +6,7 @@
 # 📕 4. Modelo – Projeto Integrador / TCC
 
 ```markdown
-# 🎓 Sistema de Lanchonete (TCC)
+# 🎓 Sistema de Mercado Digital Escolar (TCC)
 
 ## 📖 Introdução
 Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) do curso Técnico em Desenvolvimento de Sistemas.
