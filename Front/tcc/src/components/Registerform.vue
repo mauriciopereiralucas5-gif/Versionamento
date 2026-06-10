@@ -23,8 +23,23 @@
                 placeholder="Digite seu email"
                 required
                 />
-
             </div>
+
+            <div class="campo">
+                <table>Senha</table>
+
+                <input
+                type="password"
+                v-model="form.senha"
+                placeholder="Digite sua senha"
+                required
+                />
+            </div>
+<p>resultado</p>
+
+            <button type="submit">
+                    enviar
+            </button>
         </form>
     </div>
 </template>
@@ -33,17 +48,19 @@
 import { reactive, ref } from 'vue';
 
 const mensagem = ref ('')
+const resultado = ref ('')
 
 const form = reactive({
     nome: '',
-    email: ''
+    email: '',
+    senha: ''
 })
 
 async function enviarFormulario() {
     try {
 
         const resposta = await fetch(
-            'http://127.0.0.1:5000',
+            'http://127.0.0.1:5000/cadastro',
             {
                 method: 'POST',
                 
@@ -58,6 +75,7 @@ async function enviarFormulario() {
         const dados = await resposta.json()
 
         mensagem.value = dados.mensagem
+        resultado.value = dados.resultado
 
         console.log(dados)
 

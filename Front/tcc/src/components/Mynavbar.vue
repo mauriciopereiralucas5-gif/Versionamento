@@ -14,7 +14,11 @@ import {BApp} from 'bootstrap-vue-next'
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <!-- <a class="nav-link" href="../Pages/Cardapio.vue">Mercado</a> -->
-           <router-link class="nav-link" to="/mercado">Mercado</router-link>
+          <router-link class="nav-link" to="/mercado">Mercado</router-link>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="../Pages/Cardapio.vue">Mercado</a> -->
+           <router-link class="nav-link" to="/historico">Histórico de Compras</router-link>
         </li>
         <li class="nav-item">
           <!-- <a class="nav-link" href="../Pages/Cardapio.vue">Mercado</a> -->
@@ -22,7 +26,7 @@ import {BApp} from 'bootstrap-vue-next'
         </li>
         <li class="nav-item">
           <!-- <a class="nav-link" href="../Pages/Cardapio.vue">Mercado</a> -->
-           <router-link class="nav-link" to="/login-prof">Login Prof</router-link>
+          <router-link class="nav-link" to="/login-prof">Login Prof</router-link>
         </li>
       </ul>
       <form class="d-flex" role="search">

@@ -4,6 +4,7 @@ import Home from '@/Pages/Home.vue'
 import Mercado from '@/Pages/Mercado.vue'
 import LoginAluno from '@/Pages/Login-Aluno.vue'
 import LoginProf from '@/Pages/Login-prof.vue'
+import Historico from '@/Pages/Historico.vue'
 
 const routes = [
     { path: '/home', name: 'home', component: Home},
@@ -11,6 +12,7 @@ const routes = [
     { path: '/mercado', name: 'mercado', component: Mercado},
     { path: '/login-aluno', name: 'login-aluno', component: LoginAluno},
     { path: '/login-prof', name: 'login-prof', component: LoginProf},
+    { path: '/historico', name: 'historico', component: Historico},
 ]
 
 const router = createRouter({

@@ -65,9 +65,21 @@ def cadastro():
         print(email)
         print(senha)
 
+        conn = conectar()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT * FROM usuarios")
+        usuarios = cursor.fetchall()
+
+        # Converter para lista de dicionários
+        resultado = [dict(usuario) for usuario in usuarios]
+
+        conn.close()        
+
         return jsonify({
             "mensagem": "Cadastro recebido com sucesso",
-            "dados": dados
+            "dados": dados,
+            "resultado":resultado
         })
 
     except Exception as e:
