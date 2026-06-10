@@ -1,6 +1,6 @@
 <template>
-    <div class="card">
-        <h1>Cadastro</h1>
+    <div class="card-registro">
+        <h1 class="titulo">Cadastro</h1>
 
         <form @submit.prevent="enviarFormulario">
             <div class="campo">
@@ -35,10 +35,10 @@
                 required
                 />
             </div>
-<p>resultado</p>
 
-            <button type="submit">
-                    enviar
+
+            <button type="submit" class="botao-login">
+                    Entrar
             </button>
         </form>
     </div>
