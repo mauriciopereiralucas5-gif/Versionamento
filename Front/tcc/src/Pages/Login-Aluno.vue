@@ -8,21 +8,21 @@ import Registerform from '@/components/Registerform.vue';
         <div class="overlay"></div>
         <div class="left-content">
             <div class="logo">
-          🛒
-        </div>
-        <h1 class="logo-title">
-            Teixeira
-            <span>Market</span>
-        </h1>
-        <p class="subtitle">
-            O mercado do JTA
-            que <span>recompensa</span> por um bom rendimento!
-        </p>
-
-        <div class="features">
-            <div class="feature">
-                <h3>🏅 Recompensas</h3>
-            <p>Ganhe teixeirinhas por um bom desempenho!</p>
+                🛒
+            </div>
+            <h1 class="logo-title">
+                Teixeira
+                <span>Market</span>
+            </h1>
+            <p class="subtitle">
+                O mercado do JTA
+                que <span>recompensa</span> por um bom rendimento!
+            </p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🏅 Recompensas</h3>
+                    <p>Ganhe teixeirinhas por um bom desempenho!</p>
             </div>
             <div class="feature">
                 <h3>🛒 Troque </h3>
@@ -33,31 +33,30 @@ import Registerform from '@/components/Registerform.vue';
                 <p>Acompanhe seu rendimento escolar!</p>
             </div>
         </div>
-        </div>
     </div>
+</div>
 
 <!--lado direito-->
 
 <div class="right-side">
-
-<div class="login-card">
-
-  <p class="welcome">
-    Bem-vindo ao
+    
+    <div class="login-card">
+        
+        <p class="welcome">
+            Bem-vindo ao
   </p>
 
   <h1 class="titulo-login">
     Teixeira
     <span>Market</span>
-  </h1>
+</h1>
 
-  <p class="descricao">
+<p class="descricao">
     Faça login para acessar o site
   </p>
-
-  <Registerform/>
+  
+<Registerform/>
 
 </div>
-
 </div>
 </template>
