@@ -4,6 +4,7 @@ import mycard from './components/mycard.vue';
 import mybutton from './components/mybutton.vue';
 import Registerform from './components/Registerform.vue';
 import Mynavbar from './components/Mynavbar.vue'
+import Sidebar from './components/Sidebar.vue'
 </script>
 
 <template>
