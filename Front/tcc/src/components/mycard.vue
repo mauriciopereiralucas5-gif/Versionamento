@@ -11,7 +11,7 @@ import {BApp} from 'bootstrap-vue-next'
     <p class="descricao card-text text-left">Bombom Chokito</p>
     </div>
   <div class="card-body">
-    <button type="button" class="cor-botao">Adicionar ao carrinho</button>
+    <button type="button" class="cor-botao">Ver Produto</button>
   </div>
 </div>
 </template>

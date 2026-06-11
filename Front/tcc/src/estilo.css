@@ -146,11 +146,11 @@
   .cor-botao{
     background-color: #ff6b00;
     color: #ffffff;
-    font-weight: bolder;
+    font-weight: bold;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    border-radius: 5px;
-    font-size: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    border-radius: 8px;
+    font-size: 20px;
   }
 
   .preco{
@@ -159,12 +159,12 @@
   }
 
 .descricao{
-    font-size: 15px;
-    font-weight: bolder;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 .produto{
-    font-size: 15px;
+    font-size: 25px;
     font-weight: bold;
 }
   
