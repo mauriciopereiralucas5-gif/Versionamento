@@ -5,7 +5,6 @@ import Registerform from '@/components/Registerform.vue';
 
 <template>
   <div class="login-prof">
-    <-- LADO ESQUERDO -->
   <section class="left-panel">
   <div class="overlay"></div>
   <div class="brand-content">
@@ -38,47 +37,6 @@ import Registerform from '@/components/Registerform.vue';
   </section>
   </div>
 
-  <-- Lado direito -->
-  <section class="right-painel">
-    <div class="login-card">
-      <div class="avantar">
-        👨‍🏫
-      </div>
-      <h2>
-        Bem-vindo
-        <span>Professor!</span>
-      </h2>
-      <p class="subtitle">
-        Faça login para acessor o sistema
-      </p>
-      <div class="input-group">
-        <input type="text"
-        placeholder="Usuario ou e-mail"
-        />
-        <div class="input-group">
-          <input 
-          type="password"
-          placeholder="Senha"
-        />
-        </div>
-        <div class="forgot">
-          Entrar como Professor
-        </div>
-        <button class="bnt-professor">
-          Entrar como Professor
-        </button>
-        <div class="divider">
-          <span>ou</span>
-        </div>
-        <button class="btn-admin">
-          Acessar como Administrador
-        </button>
-        <div class="security">
-          🔒 sistema seguro e confiável
-        </div>
-      </div>
-    </div>
-  </section>
 
   <Registerform/>
 </template>
