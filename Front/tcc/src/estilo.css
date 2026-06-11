@@ -1,74 +1,145 @@
-.titulo{
-    color: rgb(250, 196, 126);
-}
-
-.titulo-login-aluno{
-    color: rgb(255, 142, 49);
-}
-
-.right-side{
-    width: 50%;
-    background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,rgba(0,0,0,.75)))
-    url('/src/assets/market-bg.jpg');
-    background-size:cover;
-    background-position: center;
-}
-
-.content{
-    color: rgb(0, 0, 0);
-    padding: 80px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.feature{
-    margin-top: 5px;
-    font-size: 15px;
-}
-
-.logo{
-    font-size: 50px;
-    text-align:center;
-}
-
-.card-registro{
-    background-color: rgb(255, 255, 255);
-}
-
-.botao-login{
-    background-color: rgb(255, 123, 0);
-    font-size: 10px;
-    color: rgb(255, 255, 255);
-    border-radius: 5px;
-    font-size: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.login-prof{
-    display: flex;
-    min-height: 100vh;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  
+  .login-container{
+    display:flex;
+    min-height:100vh;
     font-family:'Poppins',sans-serif;
-    background: #000;
-}
-
-/*esquerda*/
-.left-panel{
-    width: 50%;
-    position: relative;
-
-
-background:
-linear-gradient(rgba(0,0,0,.80),rgba(0,0,0,.80)),
-url('https://images.unsplash.com/photo-1542838132-92c53300491e');
-background-size: cover;
-background-position:center ;
-}
+    background:#000;
+  }
+  
+  /* ESQUERDA */
+  
+  .left-panel{
+    width:50%;
+    position:relative;
+  
+    background:
+    linear-gradient(rgba(0,0,0,.80),rgba(0,0,0,.80)),
+    url('https://images.unsplash.com/photo-1542838132-92c53300491e');
+  
+    background-size:cover;
+    background-position:center;
+  }
+  
+  .overlay{
+    position:absolute;
+    inset:0;
+  }
+  
+  .brand-content{
+    position:relative;
+    z-index:2;
+  
+    height:100%;
+  
+    padding:70px;
+  
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  
+  .logo-area h1{
+    color:#fff;
+    font-size:72px;
+    line-height:1;
+  }
+  
+  .logo-area span{
+    color:#ff6b00;
+  }
+  
+  .logo-icon{
+    font-size:60px;
+    color:#ff6b00;
+    margin-bottom:20px;
+  }
+  
+  .description{
+    color:white;
+    font-size:32px;
+    margin-top:25px;
+  }
+  
+  .description span{
+    color:#ff6b00;
+  }
+  
+  .features{
+    display:flex;
+    gap:30px;
+    margin-top:80px;
+  }
+  
+  .feature{
+    color:white;
+    text-align:center;
+  }
+  
+  .feature .icon{
+    font-size:35px;
+    margin-bottom:10px;
+  }
+  
+  .forgot{
+    text-align:right;
+    color:#ff6b00;
+    margin-bottom:25px;
+    cursor:pointer;
+  }
+  
+  .btn-professor{
+    width:100%;
+    height:65px;
+  
+    border:none;
+    border-radius:15px;
+  
+    background:#111;
+    color:white;
+  
+    font-size:20px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  
+  .divider{
+    margin:30px 0;
+    text-align:center;
+    color:#999;
+  }
+  
+  .btn-admin{
+    width:100%;
+    height:65px;
+  
+    border:1px solid #ddd;
+    border-radius:15px;
+  
+    background:white;
+    font-size:18px;
+    cursor:pointer;
+  }
+  
+  .security{
+    text-align:center;
+    margin-top:30px;
+    color:#666;
+  }
+  
+  @media(max-width:1200px){
+  
+    .left-panel{
+      display:none;
+    }
+  
+    .right-panel{
+      width:100%;
+    }
+  
+  }
+  
