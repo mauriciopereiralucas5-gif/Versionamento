@@ -112,7 +112,7 @@ import Registerform from '@/components/Registerform.vue'
 
   background:
   linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
-  url('@/assets/market-bg.jpg');
+  url('https://png.pngtree.com/thumb_back/fh260/background/20240720/pngtree-supermarket-grocery-store-aisle-and-shelves-blurred-background-image_15896050.jpg');
 
   background-size: cover;
   background-position: center;
