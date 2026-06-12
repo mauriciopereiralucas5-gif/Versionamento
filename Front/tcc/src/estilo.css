@@ -1,147 +1,3 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-  }
-  
-  .login-container{
-    display:flex;
-    min-height:100vh;
-    font-family:'Poppins',sans-serif;
-    background:#000;
-  }
-  
-  /* ESQUERDA */
-  
-  .left-panel{
-    width:50%;
-    position:relative;
-  
-    background:
-    linear-gradient(rgba(0,0,0,.80),rgba(0,0,0,.80)),
-    url('https://images.unsplash.com/photo-1542838132-92c53300491e');
-  
-    background-size:cover;
-    background-position:center;
-  }
-  
-  .overlay{
-    position:absolute;
-    inset:0;
-  }
-  
-  .brand-content{
-    position:relative;
-    z-index:2;
-  
-    height:100%;
-  
-    padding:70px;
-  
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
-  
-  .logo-area h1{
-    color:#fff;
-    font-size:72px;
-    line-height:1;
-  }
-  
-  .logo-area span{
-    color:#ff6b00;
-  }
-  
-  .logo-icon{
-    font-size:60px;
-    color:#ff6b00;
-    margin-bottom:20px;
-  }
-  
-  .description{
-    color:white;
-    font-size:32px;
-    margin-top:25px;
-  }
-  
-  .description span{
-    color:#ff6b00;
-  }
-  
-  .features{
-    display:flex;
-    gap:30px;
-    margin-top:80px;
-  }
-  
-  .feature{
-    color:white;
-    text-align:center;
-  }
-  
-  .feature .icon{
-    font-size:35px;
-    margin-bottom:10px;
-  }
-  
-  .forgot{
-    text-align:right;
-    color:#ff6b00;
-    margin-bottom:25px;
-    cursor:pointer;
-  }
-  
-  .btn-professor{
-    width:100%;
-    height:65px;
-  
-    border:none;
-    border-radius:15px;
-  
-    background:#111;
-    color:white;
-  
-    font-size:20px;
-    font-weight:600;
-    cursor:pointer;
-  }
-  
-  .divider{
-    margin:30px 0;
-    text-align:center;
-    color:#999;
-  }
-  
-  .btn-admin{
-    width:100%;
-    height:65px;
-  
-    border:1px solid #ddd;
-    border-radius:15px;
-  
-    background:white;
-    font-size:18px;
-    cursor:pointer;
-  }
-  
-  .security{
-    text-align:center;
-    margin-top:30px;
-    color:#666;
-  }
-  
-  @media(max-width:1200px){
-  
-    .left-panel{
-      display:none;
-    }
-  
-    .right-panel{
-      width:100%;
-    }
-  
-  }
 
   .cor-botao{
     background-color: #ff6b00;
@@ -167,4 +23,135 @@
     font-size: 25px;
     font-weight: bold;
 }
-  
+
+.aluno-page{
+  display:flex;
+  height:100vh;
+  width:100%;
+}
+
+/* ESQUERDA */
+
+.left-side{
+  width:50%;
+  position:relative;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.75)
+  ),
+  url('https://png.pngtree.com/background/20250205/original/pngtree-supermarket-aisle-with-product-on-shelves-blurred-background-picture-image_15628036.jpg');
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.left-content{
+  width:75%;
+  color:white;
+}
+
+.logo{
+  font-size:60px;
+}
+
+.logo-title{
+  font-size:90px;
+  line-height:90px;
+  margin-bottom:25px;
+}
+
+.logo-title span{
+  color:#ff6b00;
+}
+
+.subtitle{
+  font-size:30px;
+  line-height:45px;
+}
+
+.subtitle span{
+  color:#ff6b00;
+  font-weight:bold;
+}
+
+.features{
+  margin-top:80px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.feature{
+  text-align:center;
+  width:150px;
+}
+
+.feature-icon{
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.feature h3{
+  color:#ff6b00;
+  margin-bottom:10px;
+}
+
+.feature p{
+  font-size:14px;
+  color:#ddd;
+}
+
+/* DIREITA */
+
+.right-side{
+  width:50%;
+  background:black;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.login-card{
+
+  width:675px;
+
+  background:white;
+
+  border-radius:35px;
+
+  padding:20px;
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,.3);
+}
+
+.welcome{
+  text-align:center;
+  color:#ff6b00;
+  font-weight:bold;
+  font-size:22px;
+}
+
+.titulo-market{
+  text-align:center;
+  font-size:30px;
+  margin-top:10px;
+}
+
+.titulo-market span{
+  color:#ff6b00;
+}
+
+.descricao{
+  text-align:center;
+  color:#666;
+  margin-top:20px;
+  margin-bottom:40px;
+  font-size:20px;
+}
