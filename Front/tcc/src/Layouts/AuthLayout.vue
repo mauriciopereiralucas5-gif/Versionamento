@@ -1,3 +1,3 @@
 <template>
-    <h1>Sobre</h1>
+    <router-view/>
 </template>

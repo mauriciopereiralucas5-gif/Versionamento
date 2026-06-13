@@ -1,19 +1,93 @@
-import { createRouter, createWebHistory } from  'vue-router'
-import About from '@/Pages/About.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+
+import AuthLayout from '@/Layouts/AuthLayout.vue'
+import MainLayout from '@/Layouts/MainLayout.vue'
 import Home from '@/Pages/Home.vue'
 import Mercado from '@/Pages/Mercado.vue'
 import LoginAluno from '@/Pages/Login-Aluno.vue'
 import LoginProf from '@/Pages/Login-prof.vue'
 import Historico from '@/Pages/Historico.vue'
+import Saldo from '@/Pages/Saldo.vue'
+import Desempenho from '@/Pages/Desempenho.vue'
+import Conquistas from '@/Pages/Conquistas.vue'
+import Perfil from '@/Pages/Perfil.vue'
 
 const routes = [
-    { path: '/home', name: 'home', component: Home},
-    { path: '/sobre', name: 'sobre', component: About},
-    { path: '/mercado', name: 'mercado', component: Mercado},
-    { path: '/login-aluno', name: 'login-aluno', component: LoginAluno},
-    { path: '/login-prof', name: 'login-prof', component: LoginProf},
-    { path: '/historico', name: 'historico', component: Historico},
-]
+
+    {
+      path: '/',
+      component: AuthLayout,
+  
+      children: [
+  
+        {
+          path: 'login-aluno',
+          name: 'login-aluno',
+          component: LoginAluno
+        },
+  
+        {
+          path: 'login-prof',
+          name: 'login-prof',
+          component: LoginProf
+        }
+  
+      ]
+    },
+  
+    {
+      path: '/',
+      component: MainLayout,
+  
+      children: [
+  
+        {
+          path: 'home',
+          name: 'home',
+          component: Home
+        },
+  
+        {
+          path: 'mercado',
+          name: 'mercado',
+          component: Mercado
+        },
+  
+        {
+          path: 'historico',
+          name: 'historico',
+          component: Historico
+        },
+
+        {
+            path: 'teixeirinhas',
+            name: 'teixeirinhas',
+            component: Saldo
+        },
+
+        {
+            path: 'desempenho',
+            name: 'desempenho',
+            component: Desempenho
+        },
+
+        {
+            path: 'conquistas',
+            name: 'conquistas',
+            component: Conquistas
+        },
+
+        {
+            path: 'perfil',
+            name: 'perfil',
+            component: Perfil
+        },
+        
+  
+      ]
+    }
+  
+  ]
 
 const router = createRouter({
     history: createWebHistory(),
