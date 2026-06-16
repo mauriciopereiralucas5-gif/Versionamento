@@ -1,38 +1,37 @@
 <script setup>
+
 defineProps({
   nome: String,
   descricao: String,
   preco: Number,
   imagem: String
 })
+
 </script>
 
 <template>
 
-  <div class="fundo-card">
+  <div class="produto-card">
 
-    <img
-      :src="imagem"
-      :alt="nome"
-      class="card-img-top"
-    >
+    <div class="imagem-container">
+      <img
+        :src="imagem"
+        :alt="nome"
+      >
+    </div>
 
-    <div class="card-body">
+    <div class="conteudo">
 
-      <h3 class="produto">
-        {{ nome }}
-      </h3>
+      <h3>{{ nome }}</h3>
 
-      <h5 class="preco">
-        🪙 {{ preco }} Teixeirinhas
-      </h5>
+      <p>{{ descricao }}</p>
 
-      <p class="descricao">
-        {{ descricao }}
-      </p>
+      <div class="preco">
+        🪙 {{ preco }}
+      </div>
 
-      <button class="cor-botao">
-        Ver Produto
+      <button>
+        Adicionar ao Carrinho
       </button>
 
     </div>
@@ -40,113 +39,117 @@ defineProps({
   </div>
 
 </template>
+
 <style scoped>
 
-/* CARD */
+.produto-card{
 
-.fundo-card {
+  width:280px;
 
-width: 280px;
+  background:white;
 
-flex-shrink: 0;
+  border-radius:20px;
 
-background: white;
+  overflow:hidden;
 
-border-radius: 20px;
+  box-shadow:
+  0 8px 20px rgba(0,0,0,.08);
 
-overflow: hidden;
-
-box-shadow: 0 8px 20px rgba(0,0,0,.08);
-
-transition: .3s;
+  transition:.3s;
 }
 
-.card-img-top{
-  width:100%;
-  height:200px;
+.produto-card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+  0 15px 35px rgba(0,0,0,.15);
+}
+
+.imagem-container{
+
+  height:220px;
+
+  background:#f8f9fa;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+.imagem-container img{
+
+  width:80%;
+
+  height:80%;
+
   object-fit:contain;
 }
 
-/* CORPO */
+.conteudo{
 
-.card-body {
-
-    padding: 20px;
+  padding:20px;
 }
 
-/* NOME */
+.conteudo h3{
 
-.produto {
+  text-align:center;
 
-    text-align: center;
+  font-size:28px;
 
-    font-size: 28px;
-
-    font-weight: 700;
-
-    color: #222;
-
-    margin-bottom: 10px;
+  font-weight:700;
 }
 
-/* PREÇO */
+.conteudo p{
 
-.preco {
+  text-align:center;
 
-    text-align: center;
+  color:#666;
 
-    color: #ff6b00;
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    margin-bottom: 12px;
+  margin:15px 0;
 }
 
-/* DESCRIÇÃO */
+.preco{
 
-.descricao {
+  text-align:center;
 
-    text-align: center;
+  font-size:24px;
 
-    color: #666;
+  font-weight:bold;
 
-    font-size: 16px;
-
-    min-height: 45px;
-
-    margin-bottom: 20px;
+  color:#ff6b00;
 }
 
-/* BOTÃO */
+button{
 
-.cor-botao {
+  width:100%;
 
-    width: 100%;
+  margin-top:20px;
 
-    border: none;
+  border:none;
 
-    border-radius: 12px;
+  border-radius:12px;
 
-    padding: 12px;
+  padding:12px;
 
-    background: #ff6b00;
+  background:#ff6b00;
 
-    color: white;
+  color:white;
 
-    font-size: 17px;
+  font-size:16px;
 
-    font-weight: 600;
+  font-weight:600;
 
-    transition: 0.3s;
+  cursor:pointer;
+
+  transition:.3s;
 }
 
-.cor-botao:hover {
+button:hover{
 
-    background: #ff8124;
-
-    transform: scale(1.02);
+  background:#e85f00;
 }
 
 </style>
