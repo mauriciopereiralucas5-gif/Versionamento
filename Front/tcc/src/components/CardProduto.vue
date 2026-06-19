@@ -91,6 +91,8 @@ defineProps({
 .conteudo{
 
   padding:20px;
+  font-size: 15px;
+  font-weight: bolder;
 }
 
 .conteudo h3{
@@ -119,7 +121,7 @@ defineProps({
 
   font-weight:bold;
 
-  color:#ff6b00;
+  color:hsl(25, 100%, 50%);
 }
 
 button{
