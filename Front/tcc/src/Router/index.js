@@ -11,6 +11,7 @@ import Saldo from '@/Pages/Saldo.vue'
 import Desempenho from '@/Pages/Desempenho.vue'
 import Conquistas from '@/Pages/Conquistas.vue'
 import Perfil from '@/Pages/Perfil.vue'
+import Carrinho from '@/Pages/Carrinho.vue'
 
 const routes = [
 
@@ -82,6 +83,12 @@ const routes = [
             name: 'perfil',
             component: Perfil
         },
+
+        {
+          path: 'carrinho',
+          name: 'carrinho',
+          component: Carrinho
+      },
         
   
       ]

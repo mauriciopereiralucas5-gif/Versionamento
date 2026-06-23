@@ -34,7 +34,7 @@
     <nav class="menu">
 
       <router-link to="/home" class="item">
-        🏠 Dashboard
+        🏠 Início
       </router-link>
 
       <router-link to="/mercado" class="item">

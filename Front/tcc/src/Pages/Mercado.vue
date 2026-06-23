@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import CardProduto from '@/components/CardProduto.vue'
 import Saldo from './Saldo.vue'
+import Carrinho from './Carrinho.vue'
 
 const categoriaSelecionada = ref('Tudo')
 const pesquisa = ref("")
@@ -97,6 +98,12 @@ return lista
   class="barra-pesquisa"
   >
 </div>
+
+<router-link to="/carrinho">
+  <button class="botao-carrinho">
+    Ir para carrinho
+  </button>
+</router-link>
 
 <div class="contador-produtos">
   📦 {{ produtosFiltrados.length}}
@@ -208,6 +215,7 @@ return lista
 .barra-pesquisa:focus{
   box-shadow: 0 0 15px rgba(rgba(255,106,0,.25));
 }
+
 
 .contador-produtos{
   margin-bottom: 25px;
