@@ -3,6 +3,12 @@ import { ref, computed } from 'vue'
 import CardProduto from '@/components/CardProduto.vue'
 import Saldo from './Saldo.vue'
 import Carrinho from './Carrinho.vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+function abrirCarrinho(){
+  router.push('/carrinho')
+}
 
 const categoriaSelecionada = ref('Tudo')
 const pesquisa = ref("")
@@ -14,7 +20,7 @@ const produtos = [
     descricao: 'Bombom Chokito',
     preco: 2,
     categoria: 'Doces',
-    imagem: 'https://cdn.awsli.com.br/2500x2500/298/298064/produto/13927482/d2b5e5ef55.jpg'
+    imagem: 'https://americanas.vtexassets.com/arquivos/ids/471271-768-auto/28319636_1SZ.webp?v=638750826861670000&quality=9'
   },
 
   {
@@ -53,6 +59,7 @@ const produtos = [
 
 const produtosFiltrados = computed(() => {
 
+
 let lista = produtos
 
 // filtro de categoria
@@ -81,6 +88,7 @@ if (pesquisa.value) {
 
 return lista
 })
+
 </script>
 
 <template>
@@ -90,20 +98,25 @@ return lista
 </h1>
 <h2 class="subtitle text-center">Troque seus Teixeirinhas por diversos produtos!</h2>
 
-<div class="pesquisa.container">
+<div class="pesquisa-container">
   <input
   v-model="pesquisa"
   type="text"
   placeholder="🔍 Pesquisar Produto..."
   class="barra-pesquisa"
   >
-</div>
+  <div class="">
+    <button class="botao-carrinho" @click="abrirCarrinho">
 
-<router-link to="/carrinho">
-  <button class="botao-carrinho">
-    Ir para carrinho
-  </button>
-</router-link>
+      <i class="bi bi-cart-fill"></i>
+
+<span class="contador-carrinho">
+  0
+</span>
+
+</button>
+  </div>
+</div>
 
 <div class="contador-produtos">
   📦 {{ produtosFiltrados.length}}
@@ -169,7 +182,7 @@ return lista
       🔎 Nenhum produto encontrado
 
       <p>
-        Tente pesquisar outro nome
+        Tente pesquisar por outro nome
       </p>
     </div>
     </div>
@@ -201,8 +214,81 @@ return lista
   justify-content: center;
 }
 
+.botao-carrinho{
+
+position: relative;
+
+width: 55px;
+height: 55px;
+
+border: none;
+
+border-radius: 15px;
+
+background: white;
+
+color: #ff6b00;
+
+font-size: 28px;
+
+cursor: pointer;
+
+transition: .25s;
+
+box-shadow: 0 5px 15px rgba(0,0,0,.08);
+
+display: flex;
+
+justify-content: center;
+align-items: center;
+}
+
+.botao-carrinho:hover{
+
+background:#ff6b00;
+
+color:white;
+
+transform: translateY(-4px) scale(1.05);
+
+box-shadow:0 12px 25px rgba(255,106,0,.25);
+}
+
+.botao-carrinho i{
+
+font-size:25px;
+}
+
+.contador-carrinho{
+
+position:absolute;
+
+top:-6px;
+right:-6px;
+
+width:24px;
+height:24px;
+
+border-radius:50%;
+
+background:#ff3b30;
+
+color:white;
+
+font-size:13px;
+
+font-weight:bold;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+border:2px solid white;
+}
+
 .barra-pesquisa{
-  width: 450px;
+  width: 60vw;
   height: 55px;
   padding: 0 20px;
   border: 2px solid #ff6a00;
@@ -215,7 +301,6 @@ return lista
 .barra-pesquisa:focus{
   box-shadow: 0 0 15px rgba(rgba(255,106,0,.25));
 }
-
 
 .contador-produtos{
   margin-bottom: 25px;
@@ -259,7 +344,7 @@ return lista
   gap:25px;
 }
 
-grid-container {
+.grid-container{
   display: grid;
   /* Cria 2 colunas de tamanhos iguais */
   grid-template-columns: 1fr 1fr;

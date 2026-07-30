@@ -41,6 +41,10 @@
         🛒 Loja Escolar
       </router-link>
 
+      <router-link to="/carrinho" class="item">
+        🛒 Meu Carrinho
+      </router-link>
+
       <router-link to="/teixeirinhas" class="item">
         🪙 Meus Teixeirinhas
       </router-link>

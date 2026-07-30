@@ -13,6 +13,7 @@ import Conquistas from '@/Pages/Conquistas.vue'
 import Perfil from '@/Pages/Perfil.vue'
 import Carrinho from '@/Pages/Carrinho.vue'
 
+
 const routes = [
 
     {
