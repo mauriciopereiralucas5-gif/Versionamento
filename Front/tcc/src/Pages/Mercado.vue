@@ -1,8 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
 import CardProduto from '@/components/CardProduto.vue'
-import Saldo from './Saldo.vue'
-import Carrinho from './Carrinho.vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -10,8 +8,11 @@ function abrirCarrinho(){
   router.push('/carrinho')
 }
 
+const saldo = ref(125)
+
 const categoriaSelecionada = ref('Tudo')
 const pesquisa = ref("")
+const quantidadeCarrinho = ref(0)
 
 const produtos = [
 
@@ -89,45 +90,52 @@ if (pesquisa.value) {
 return lista
 })
 
+function adicionarCarrinho(produto){
+
+quantidadeCarrinho.value++
+
+console.log(produto.nome)
+
+}
+
 </script>
 
 <template>
 
-<h1 class="Mercado text-center">Mercado
-  <span>Escolar</span>
-</h1>
+  <div class="cabecalho">
+    <h1 class="Mercado">
+    Mercado <span>Escolar</span>
+  </h1>
+
+  <div class="saldo-moedas">
+    <i class="bi bi-coin"></i>
+    {{ saldo }} Teixeirinhas
+  </div>
+
+  </div>
 <h2 class="subtitle text-center">Troque seus Teixeirinhas por diversos produtos!</h2>
 
-<div class="pesquisa-container">
-  <input
+<div class="topo-mercado">
+
+<input
   v-model="pesquisa"
   type="text"
-  placeholder="🔍 Pesquisar Produto..."
+  placeholder= "Pesquisar Produto..."
   class="barra-pesquisa"
-  >
-  <div class="">
-    <button class="botao-carrinho" @click="abrirCarrinho">
+>
 
-      <i class="bi bi-cart-fill"></i>
+<button
+  class="botao-carrinho"
+  @click="abrirCarrinho"
+>
 
-<span class="contador-carrinho">
-  0
-</span>
+  <i class="bi bi-cart-fill"></i>
+
+  <span class="contador-carrinho">
+    {{ quantidadeCarrinho }}
+  </span>
 
 </button>
-  </div>
-</div>
-
-<div class="contador-produtos">
-  📦 {{ produtosFiltrados.length}}
-
-  <span v-if="produtosFiltrados.length === 1">
-    produto encontrado
-  </span>
-
-  <span v-else>
-    produtos encontrados
-  </span>
 
 </div>
 
@@ -171,6 +179,8 @@ return lista
   :descricao="produto.descricao"
   :preco="produto.preco"
   :imagem="produto.imagem"
+
+  @adicionar="adicionarCarrinho(produto)"
   />
       </template>
 
@@ -206,6 +216,48 @@ return lista
   font-weight: bold;
   color: #666;
   font-size: 15px;
+}
+
+.topo-mercado{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+margin:15px 0;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin-top: 15px;
+}
+
+.saldo-moedas{
+    height: 45px;
+    padding: 0 10px;
+    border: 2px solid #ff6a00;
+    border-radius: 15px;
+    background: #fff7ef;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #ff6a00;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.saldo-moedas i{
+
+font-size:20px;
 }
 
 .pesquisa-container{
@@ -288,9 +340,9 @@ border:2px solid white;
 }
 
 .barra-pesquisa{
-  width: 60vw;
+  width: 70vw;
   height: 55px;
-  padding: 0 20px;
+  padding: 0 15px;
   border: 2px solid #ff6a00;
   border-radius: 15px;
   outline: none;
@@ -342,14 +394,6 @@ border:2px solid white;
   flex-wrap:wrap;
 
   gap:25px;
-}
-
-.grid-container{
-  display: grid;
-  /* Cria 2 colunas de tamanhos iguais */
-  grid-template-columns: 1fr 1fr;
-  /* Define o espaçamento entre as linhas e colunas */
-  gap: 20px; 
 }
 
 .grid-item {

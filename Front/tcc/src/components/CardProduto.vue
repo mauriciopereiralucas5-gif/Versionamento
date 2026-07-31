@@ -7,6 +7,8 @@ defineProps({
   imagem: String
 })
 
+const emit = defineEmits(['adicionar'])
+
 </script>
 
 <template>
@@ -30,10 +32,9 @@ defineProps({
         🪙 {{ preco }}
       </div>
 
-      <button>
+      <button @click="emit('adicionar')">
         Adicionar ao Carrinho
       </button>
-
     </div>
 
   </div>

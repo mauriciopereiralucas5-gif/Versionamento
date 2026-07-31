@@ -5,7 +5,7 @@
     <div class="brand">
 
       <div class="logo">
-        🛒
+        <i class="bi bi-cart-fill"></i>
       </div>
 
       <div class="brand-text">
@@ -20,7 +20,7 @@
     <div class="student-card">
 
       <div class="avatar">
-        👨‍🎓
+        <i class="bi bi-person-fill"></i>
       </div>
 
       <h4>Lucas</h4>
@@ -34,45 +34,49 @@
     <nav class="menu">
 
       <router-link to="/home" class="item">
-        🏠 Início
+      <i class="bi bi-house icon"></i><span>Início</span>
       </router-link>
 
       <router-link to="/mercado" class="item">
-        🛒 Loja Escolar
+        <i class="bi bi-bag icon"></i><span>Loja</span>
       </router-link>
 
       <router-link to="/carrinho" class="item">
-        🛒 Meu Carrinho
+        <i class="bi bi-cart icon"></i><span>Meu Carrinho</span>
       </router-link>
 
       <router-link to="/teixeirinhas" class="item">
-        🪙 Meus Teixeirinhas
+        <i class="bi bi-coin icon"></i><span>Teixeirinhas</span>
       </router-link>
 
       <router-link to="/conquistas" class="item">
-        🏆 Conquistas
+        <i class="bi bi-trophy icon"></i><span>Conquistas</span>
       </router-link>
 
       <router-link to="/desempenho" class="item">
-        📚 Desempenho Escolar
+        <i class="bi bi-bar-chart icon"></i><span>Desempenho Escolar</span>
       </router-link>
 
       <router-link to="/historico" class="item">
-        📋 Histórico de Compras
+        <i class="bi bi-clipboard2-data icon"></i><span>Histórico</span>
       </router-link>
 
       <router-link to="/perfil" class="item">
-        👤 Meu Perfil
+        <i class="bi bi-person icon"></i><span>Meu Perfil</span>
       </router-link>
 
     </nav>
+
+    <button class="logout">
+      <i class="bi bi-door-open-fill icon"></i><span>Sair</span>
+    </button>
 
     <!-- Carteira -->
 
     <div class="wallet">
 
       <div class="wallet-icon">
-        🪙
+        <i class="bi bi-coin"></i>
       </div>
 
       <span class="wallet-title">
@@ -80,16 +84,8 @@
       </span>
 
       <h2>125</h2>
-
-      <small>Teixeirinhas</small>
-
+      <h3>Teixeirinhas</h3>
     </div>
-
-    <!-- Botão -->
-
-    <button class="logout">
-      🚪 Sair
-    </button>
 
   </aside>
 </template>
@@ -131,8 +127,10 @@ overflow-x: hidden;
 }
 
 .logo {
-
+  
+  color: #ff6b00;
   font-size: 45px;
+  padding: 10px;
 }
 
 .brand-text h2 {
@@ -169,9 +167,10 @@ overflow-x: hidden;
 
 .avatar {
 
-  font-size: 55px;
-
+  color: #e85f00;
+  font-size: 80px;
   margin-bottom: 10px;
+  height: 120px;
 }
 
 .student-card h4 {
@@ -205,11 +204,21 @@ overflow-x: hidden;
 
   padding: 14px 16px;
 
-  border-radius: 12px;
+  border-radius: 15px;
 
   transition: 0.3s;
 
   font-weight: 500;
+}
+
+.item span{
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.icon {
+  font-size: 18px;
 }
 
 .item:hover {
@@ -228,17 +237,23 @@ overflow-x: hidden;
 
 .wallet {
 
-  margin-top: auto;
+  margin-top: 20px;
+  height: 200px;
+  width: 215px;
+  justify-items: center;
 
   background: linear-gradient(
     135deg,
-    #ff6b00,
-    #ff8c1a
+    #232323,
+    #444444
   );
+
+  margin-bottom: 50px;
+  margin-left: 35px;
 
   border-radius: 20px;
 
-  padding: 10px;
+  padding: 15px;
 
   text-align: center;
 
@@ -248,7 +263,7 @@ overflow-x: hidden;
 .wallet-icon {
 
   font-size: 40px;
-
+  color: #ff6b00;
   margin-bottom: 10px;
 }
 
@@ -268,29 +283,24 @@ overflow-x: hidden;
   margin: 0;
 }
 
-.wallet small {
-
-  opacity: 0.9;
-}
-
 /* BOTÃO SAIR */
 
 .logout {
 
   margin-top: 20px;
-
-  height: 55px;
-
+  height: 50px;
+  width: 275px;
+  text-align: left;
   border: none;
+  margin: 10px;
 
-  border-radius: 15px;
+  border-radius: 10px;
 
-  background: #ff6b00;
+  background:#111;
 
   color: white;
 
   font-size: 16px;
-  font-weight: bold;
 
   cursor: pointer;
 
@@ -302,6 +312,12 @@ overflow-x: hidden;
   background: #e85f00;
 
   transform: translateY(-2px);
+}
+
+.logout span {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
 }
 
 </style>

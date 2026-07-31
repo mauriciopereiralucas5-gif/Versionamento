@@ -1,1 +1,5 @@
-adicionarAoCarrinho(produto)
+import { reactive } from 'vue'
+
+export const carrinho = reactive({
+  itens: []
+})
