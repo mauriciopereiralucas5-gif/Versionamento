@@ -12,6 +12,7 @@ import Desempenho from '@/Pages/Desempenho.vue'
 import Conquistas from '@/Pages/Conquistas.vue'
 import Perfil from '@/Pages/Perfil.vue'
 import Carrinho from '@/Pages/Carrinho.vue'
+import CadastroProduto from '@/Pages/CadastroProduto.vue'
 
 
 const routes = [
@@ -90,6 +91,12 @@ const routes = [
           name: 'carrinho',
           component: Carrinho
       },
+
+      {
+        path: 'cadastro-produto',
+        name: 'cadastro-produto',
+        component: CadastroProduto, meta:{requiresAuth: true},
+      },
         
   
       ]
@@ -100,6 +107,16 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes
+})
+
+router.beforeEach((to, next) => {
+  const isAuthenticated = localStorage.getItem('userToken');
+
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next('/LoginProf');
+  }else{
+    next();
+  }
 })
 
 export default router

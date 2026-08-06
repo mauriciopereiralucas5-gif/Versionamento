@@ -1,239 +1,64 @@
-<script setup lang="ts">
-import Registerform from '@/components/Registerform.vue'
-</script>
-
 <template>
-
-  <div class="professor-page">
-
-    <!-- LADO ESQUERDO -->
-    <div class="left-side">
-
-      <div class="left-content">
-
-        <div class="logo">
-          👨‍🏫
-        </div>
-
-        <h1 class="logo-title">
-          Teixeira
-          <span>Market</span>
-        </h1>
-
-        <p class="subtitle">
-          Gerencie recompensas e acompanhe o
-          desempenho dos seus alunos.
-        </p>
-
-        <div class="features">
-
-          <div class="feature">
-            <div class="feature-icon">🏆</div>
-            <h3>Recompense</h3>
-            <p>Distribua Teixeirinhas aos alunos.</p>
-          </div>
-
-          <div class="feature">
-            <div class="feature-icon">📊</div>
-            <h3>Acompanhe</h3>
-            <p>Veja o progresso das turmas.</p>
-          </div>
-
-          <div class="feature">
-            <div class="feature-icon">📚</div>
-            <h3>Gerencie</h3>
-            <p>Controle atividades e resultados.</p>
-          </div>
-
-        </div>
-
+  <div class="login-container">
+    <h2>Login</h2>
+    <form @submit.prevent="handleLogin">
+      <div class="input-group">
+        <label>E-mail</label>
+        <input type="email" v-model="email" required />
       </div>
-
-    </div>
-
-    <!-- LADO DIREITO -->
-    <div class="right-side">
-
-      <div class="login-card">
-
-        <p class="welcome">
-          Bem-vindo(a), Professor(a)
-        </p>
-
-        <h1 class="titulo-market">
-          Área do Professor
-        </h1>
-
-        <p class="descricao">
-          Faça login para acessar o sistema
-        </p>
-
-        <Registerform
-          titulo="Login Professor"
-          cor="#0d6efd"
-        />
-
+      <div class="input-group">
+        <label>Senha</label>
+        <input type="password" v-model="password" required />
       </div>
-
-    </div>
-
+      <button type="submit">Entrar</button>
+      <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+    </form>
   </div>
-
 </template>
 
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const email = ref('');
+const password = ref('');
+const errorMessage = ref('');
+const router = useRouter();
+
+const handleLogin = async () => {
+  try {
+    // Substitua pela chamada da sua API real
+    const response = await fakeAuthApi(email.value, password.value);
+    
+    // Salva o token retornado no localStorage
+    localStorage.setItem('userToken', response.token);
+    
+    // Redireciona para a página protegida
+    router.push('/dashboard');
+  } catch (error) {
+    errorMessage.value = 'E-mail ou senha inválidos.';
+  }
+};
+
+// Função simulada de API (substitua por fetch ou axios)
+const fakeAuthApi = (email, password) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (email === 'usuario@exemplo.com' && password === 'senha123') {
+        resolve({ token: 'seu-token-de-autenticacao-jwt-aqui' });
+      } else {
+        reject(new Error('Falha na autenticação'));
+      }
+    }, 1000);
+  });
+};
+</script>
+
 <style scoped>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-/* TELA */
-
-.professor-page{
-  width:100%;
-  height:100vh;
-  display:flex;
-}
-
-/* ESQUERDA */
-
-.left-side{
-
-  width:50%;
-
-  background:
-  linear-gradient(
-    rgba(0,0,0,.75),
-    rgba(0,0,0,.75)
-  ),
-  url('https://image.slidesdocs.com/responsive-images/background/radiant-educational-setting-3d-render-of-a-classroom-with-brilliantly-illuminated-school-desks-large-windows-and-a-whiteboard-powerpoint-background_b93b4d6d07__960_540.jpg');
-
-  background-size:cover;
-  background-position:center;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.left-content{
-  width:75%;
-  color:white;
-}
-
-.logo{
-  font-size:70px;
-}
-
-.logo-title{
-
-  font-size:80px;
-  line-height:80px;
-
-  margin-bottom:20px;
-}
-
-.logo-title span{
-  color:#0d6efd;
-}
-
-.subtitle{
-
-  font-size:28px;
-
-  line-height:40px;
-
-  margin-bottom:60px;
-}
-
-.features{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  gap:20px;
-}
-
-.feature{
-  text-align:center;
-  width:180px;
-}
-
-.feature-icon{
-  font-size:35px;
-  margin-bottom:10px;
-}
-
-.feature h3{
-  color:#0d6efd;
-  margin-bottom:10px;
-}
-
-.feature p{
-  color:#ddd;
-  font-size:14px;
-}
-
-/* DIREITA */
-
-.right-side{
-
-  width:50%;
-
-  background:#111;
-
-  display:flex;
-
-  justify-content:center;
-  align-items:center;
-}
-
-.login-card{
-
-  width:675px;
-
-  background:white;
-
-  border-radius:35px;
-
-  padding:20px;
-
-  box-shadow:
-  0 10px 40px rgba(0,0,0,.3);
-}
-
-.welcome{
-
-  text-align:center;
-
-  color:#0d6efd;
-
-  font-weight:bold;
-
-  margin-bottom:10px;
-}
-
-.titulo-market{
-
-  text-align:center;
-
-  font-size:50px;
-
-  margin-bottom:15px;
-
-  color:#111;
-}
-
-.descricao{
-
-  text-align:center;
-
-  color:#666;
-
-  margin-bottom:40px;
-}
-
+.login-container { max-width: 300px; margin: auto; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; margin-bottom: 5px; }
+.input-group input { width: 100%; padding: 8px; box-sizing: border-box; }
+button { width: 100%; padding: 10px; background-color: #42b883; color: white; border: none; cursor: pointer; }
+.error { color: red; margin-top: 10px; }
 </style>

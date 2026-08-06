@@ -15,15 +15,20 @@ import Sidebar from '@/components/Sidebar.vue'
 <style scoped>
 
 .content {
-  margin-left: 300px;
 
-  width: calc(100vw - 300px);
+margin-left: 300px;
 
-  min-height: 100vh;
+width: calc(100vw - 300px);
 
-  padding: 30px;
+height: 100vh;
 
-  background: #f5f6fa;
+overflow-y: auto;
+
+padding: 30px;
+
+background: #f5f6fa;
+
+box-sizing: border-box;
 }
 
 </style>

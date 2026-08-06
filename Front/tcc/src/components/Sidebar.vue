@@ -97,21 +97,25 @@
 
 /* SIDEBAR */
 
-.sidebar {
+.sidebar{
 
-width: 300px;
-height: 100vh;
+width:300px;
 
-background: #111;
+height:100dvh;
 
-position: fixed;
+position:fixed;
 
-left: 0;
-top: 0;
+left:0;
+top:0;
 
-overflow-y: auto;
+overflow-y:auto;
 
-overflow-x: hidden;
+overflow-x:hidden;
+
+background:#111;
+
+z-index:999;
+
 }
 
 /* LOGO */
@@ -238,9 +242,8 @@ overflow-x: hidden;
 .wallet {
 
   margin-top: 20px;
-  height: 200px;
-  width: 215px;
-  justify-items: center;
+  width: 250px;
+  margin-left: 15px;
 
   background: linear-gradient(
     135deg,
@@ -249,11 +252,13 @@ overflow-x: hidden;
   );
 
   margin-bottom: 50px;
-  margin-left: 35px;
 
   border-radius: 20px;
 
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   text-align: center;
 
