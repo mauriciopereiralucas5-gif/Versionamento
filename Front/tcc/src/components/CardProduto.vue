@@ -32,7 +32,7 @@ const emit = defineEmits(['adicionar'])
         🪙 {{ preco }}
       </div>
 
-      <button @click="emit('adicionar')">
+      <button @click="emit('adicionar')" id="liveToastBtn">
         Adicionar ao Carrinho
       </button>
     </div>
