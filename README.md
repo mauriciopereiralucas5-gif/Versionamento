@@ -3,7 +3,7 @@
 
 ---
 
-# 📕 4. Modelo – Projeto Integrador / TCC
+# 📕 Teixeira Market / TCC
 
 ```markdown
 # 🎓 Sistema de Mercado Digital Escolar (TCC)
