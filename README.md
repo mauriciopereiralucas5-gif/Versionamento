@@ -12,10 +12,10 @@
 Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) do curso Técnico em Desenvolvimento de Sistemas.
 
 ## 🎯 Problema
-Descrever o problema que o projeto resolve.
+A escola estava com problemas para administrar os Teixeirinhas impressos.
 
 ## 💡 Solução Proposta
-Descrever a solução desenvolvida.
+Decidimos criar um mercado digital para ajudar a escola a economizar com papel e ajudar a equipe da direção a administrar os alunos que podem receber o teixeirinha.
 
 ## 🛠️ Tecnologias Utilizadas
 - Front-end:
@@ -29,6 +29,7 @@ Descrever a solução desenvolvida.
 ## 🚀 Funcionalidades
 - Cadastro
 - Login
+- Gerenciamento de compras
 - Relatórios
 
 ## 📸 Protótipos
@@ -43,6 +44,7 @@ Descrever testes realizados.
 ## 👨‍🎓 Equipe
 - Lucas
 - Stephany
+- Julia
 - Thales
 
 ## 📅 Status
