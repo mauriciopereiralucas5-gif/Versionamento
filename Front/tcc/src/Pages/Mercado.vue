@@ -2,6 +2,9 @@
 import { ref, computed } from 'vue'
 import CardProduto from '@/components/CardProduto.vue'
 import { useRouter } from 'vue-router'
+import { useAlert } from '@/composables/useAlert';
+
+const { open } = useAlert();
 
 const router = useRouter()
 function abrirCarrinho(){
@@ -96,6 +99,8 @@ quantidadeCarrinho.value++
 
 console.log(produto.nome)
 
+open("Carrinho","Adicionado ao carrinho","sucess")
+
 }
 
 </script>
@@ -140,10 +145,10 @@ console.log(produto.nome)
 </div>
 
 <div class="categoria">
-  <button class="grid-item"
-  :class="{ativo: categoriaSelecionada === 'Tudo'}" 
-  @click="categoriaSelecionada = 'Tudo'">
-  🛒​Tudo
+<button class="grid-item"
+:class="{ativo: categoriaSelecionada === 'Tudo'}" 
+@click="categoriaSelecionada = 'Tudo'">
+🛒​Tudo
 </button>
 <button class="grid-item"
 :class="{ativo: categoriaSelecionada === 'Doces'}" 

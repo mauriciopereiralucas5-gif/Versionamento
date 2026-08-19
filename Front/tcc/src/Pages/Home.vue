@@ -9,6 +9,7 @@
     Bem-vindo ao <span>Teixeira Market</span>
   </h2>
 
+  <div></div>
 </template>
 
 <style scoped>

@@ -9,7 +9,7 @@ const props = defineProps({
   },
   icon: String,
   color: String,
-  unlocked: Boolean
+  unlocked: Boolean,
 })
 
 
@@ -36,7 +36,7 @@ console.log(props.icon);
 <style setup>
 
 .conquistas-icon {
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .total-conquistas {
@@ -46,16 +46,21 @@ console.log(props.icon);
     background-color: white;
     overflow: hidden;
     margin-top: 50px;
-    width: 300px;
-    height: 200px;
+    width: 286px;
+    height: 190px;
     cursor: pointer;
     transition: .3s;
-    box-shadow:0 12px 25px #4c4c4d;
+    border:2px solid #cfcfce;
     align-items: center;
+    text-align: center;
+    box-shadow:0 10px 20px #9d9d9d;
+
 }
 
 .total-conquistas:hover {
     transform: translateY(-3px);
+    box-shadow:0 12px 25px #a5a5f9;
+    border:2px solid #9c9cff;
 }
 
 .conquistas {

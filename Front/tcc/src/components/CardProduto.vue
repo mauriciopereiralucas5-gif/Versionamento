@@ -4,6 +4,7 @@ defineProps({
   nome: String,
   descricao: String,
   preco: Number,
+  categoria: String,
   imagem: String
 })
 
