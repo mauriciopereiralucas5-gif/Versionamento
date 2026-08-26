@@ -36,7 +36,9 @@ Decidimos criar um mercado digital para ajudar a escola a economizar com papel e
 (Imagens ou links do Figma)
 
 ## 🧪 Testes
-Descrever testes realizados.
+- Sidebar funcionando, mudando as páginas do sistema
+- Botões de produtos filtrados do mercado estão funcionando e filtrando certo
+- Botão de ir para o carrinho está funcionando também
 
 ## 📁 Estrutura do Projeto
 
