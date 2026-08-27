@@ -90,30 +90,6 @@ return lista
         @click="categoriaSelecionada = 'Outros'">
         Outros
         </button>
-        <div class="grid-conquistas-categoria">
-            <template v-if="categoriaSelecionada.length">
-                <CardConquista
-            v-for="conquistas in Conquistas"
-            :key="conquistas.nome"
-            :nome="conquistas.nome"
-            :descricao="conquistas.descricao"
-            :NumouNome="conquistas.NumouNome"
-            :icon="conquistas.icon"
-            :color="conquistas.color"
-            :unlocked="conquistas.unlocked"
-            />
-            </template>
-
-            <div
-            v-else
-            class="sem-conquista"
-            >
-            🔎 Nenhuma conquista encontrada
-            <p>
-                Tente procurar por outra conquista
-            </p>
-        </div>
-        </div>
     </div>
 
     <div class="texto">
